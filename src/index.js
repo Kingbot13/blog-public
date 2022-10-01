@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { SignUp, action as signUpAction } from "./routes/SignUp";
 import { LogIn, action as logInAction } from "./routes/LogIn";
 import { Post, loader as postLoader } from "./components/Post";
+import { action as commentAction } from "./components/CommentForm";
 
 const router = createBrowserRouter([
   {
@@ -27,7 +28,8 @@ const router = createBrowserRouter([
       {
         path: '/posts/:id',
         element: <Post />,
-        loader: postLoader
+        loader: postLoader,
+        action: commentAction
       }
     ],
   },

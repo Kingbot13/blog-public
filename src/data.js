@@ -56,5 +56,10 @@ export const data = (() => {
     await _formatData(`${server}/api/signUp`, form);
   }
 
-  return { getPosts, getSinglePost, logIn, signUp };
+  const addComment = async (id) => {
+    const form = document.getElementById('comment-form');
+    await _formatData(`${server}/api/posts/${id}/create-comment`, form);
+  }
+
+  return { getPosts, getSinglePost, logIn, signUp, addComment };
 })();
