@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { SignUp } from "./routes/SignUp";
 import { LogIn } from "./routes/LogIn";
+import { Post } from "./components/Post";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
         path: "/log-in",
         element: <LogIn />,
       },
+      {
+        path: '/posts/:id',
+        element: <Post />
+      }
     ],
   },
 ]);

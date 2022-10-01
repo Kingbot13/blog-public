@@ -11,5 +11,15 @@ export const data = (() => {
       console.error(err);
     }
   };
-  return { getPosts };
+  // get single post
+  const getSinglePost = async (id) => {
+    try {
+      const res = await fetch(`${server}/api/posts/${id}`);
+      const post = res.json();
+      return post;
+    } catch(err) {
+      console.error(err);
+    }
+  }
+  return { getPosts, getSinglePost };
 })();
