@@ -6,7 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { SignUp } from "./routes/SignUp";
 import { LogIn } from "./routes/LogIn";
-import { Post } from "./components/Post";
+import { Post, loader as postLoader } from "./components/Post";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +24,8 @@ const router = createBrowserRouter([
       },
       {
         path: '/posts/:id',
-        element: <Post />
+        element: <Post />,
+        loader: postLoader
       }
     ],
   },

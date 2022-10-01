@@ -15,7 +15,7 @@ export const data = (() => {
   const getSinglePost = async (id) => {
     try {
       const res = await fetch(`${server}/api/posts/${id}`);
-      const post = res.json();
+      const post = await res.json();
       return post;
     } catch(err) {
       console.error(err);
