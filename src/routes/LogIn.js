@@ -1,5 +1,10 @@
 import React from "react";
-import { Form } from "react-router-dom";
+import { Form, redirect } from "react-router-dom";
+import { data } from "../data";
+
+export async function action() {
+  await data.logIn();
+}
 
 export const LogIn = () => {
   return (

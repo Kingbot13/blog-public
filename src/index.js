@@ -4,8 +4,8 @@ import "./index.css";
 import App, { loader as rootLoader } from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { SignUp } from "./routes/SignUp";
-import { LogIn } from "./routes/LogIn";
+import { SignUp, action as signUpAction } from "./routes/SignUp";
+import { LogIn, action as logInAction } from "./routes/LogIn";
 import { Post, loader as postLoader } from "./components/Post";
 
 const router = createBrowserRouter([
@@ -17,10 +17,12 @@ const router = createBrowserRouter([
       {
         path: "/sign-up",
         element: <SignUp />,
+        action: signUpAction
       },
       {
         path: "/log-in",
         element: <LogIn />,
+        action: logInAction
       },
       {
         path: '/posts/:id',
