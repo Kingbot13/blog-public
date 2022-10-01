@@ -4,6 +4,7 @@ import { data } from "../data";
 
 export async function action() {
   await data.logIn();
+  return redirect('/');
 }
 
 export const LogIn = () => {
